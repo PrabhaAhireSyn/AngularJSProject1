@@ -1,0 +1,46 @@
+  <div class="phones">
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <h1><!--Login--></h1>
+        </div>
+      </div>
+    </header>
+  
+    <section class="section section-what-we-do">
+      <div class="container">
+        <div class="row justify-content-lg-center">
+          <div class="col col-lg-10 ">
+            <h4 class="main-title">Phones</h4>
+          </div>
+        </div>
+        <div class="row contents">
+          <div class="col col-lg-10 ">
+            <p>Search: <input ng-model="phones.query" /></p>
+        
+            <p>Sort by:
+              <select ng-model="phones.orderProp">
+                <option value="name">Alphabetical</option>
+                <option value="age">Newest</option>
+              </select>
+            </p>
+          </div>
+        </div>
+        <div class="row contents">
+          <div id="phones_block" class="col-md-10">
+            <!--Body content-->
+            <ul class="phones">
+              <li ng-repeat="phone in phones.phones | filter:phones.query | orderBy:phones.orderProp"
+                class="thumbnail">
+                <!--<a href="#/phones/{{phone.id}}" class="thumb">
+                  <img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}" />
+                </a>-->
+                <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+                <p>{{phone.snippet}}</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
